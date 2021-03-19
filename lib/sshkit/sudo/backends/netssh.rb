@@ -12,6 +12,9 @@ module SSHKit
         # extensions are required.
         #
         SKIP_STDOUT_LOGGING_PATTERNS = [
+          /^\r\n$/,
+          /^\[sudo\] password for /, # This removes context from the wrong password prompt, but it's
+                                     # a problem in our workflow.
         ]
 
         private
