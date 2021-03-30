@@ -11,6 +11,6 @@ module SSHKit
     end
   end
 
-  Backend::Abstract.send(:include, ::SSHKit::Sudo::Backend::Abstract)
+  Backend::Abstract.send(:prepend, ::SSHKit::Sudo::Backend::Abstract)
   Backend::Netssh.send(:include, ::SSHKit::Sudo::Backend::Netssh)
 end
